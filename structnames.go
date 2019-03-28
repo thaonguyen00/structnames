@@ -66,6 +66,7 @@ func launch(_ *cli.Context) error{
 		item = strings.Replace(item, " struct", "\n", -1)
 		structNames = append(structNames, item)
 		fOut.WriteString(item)
+		fmt.Println(item)
 	}
 	return nil
 }
