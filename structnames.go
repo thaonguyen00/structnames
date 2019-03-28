@@ -10,6 +10,7 @@ import (
 	"regexp"
 	"strings"
 	"fmt"
+	"os/exec"
 )
 var flags struct {
 	FileIn     string
@@ -44,7 +45,6 @@ func main() {
 
 func launch(_ *cli.Context) error{
 	file, _ := filepath.Abs(flags.FileIn)
-	fmt.Println("Parsing file:", file)
 
 	b, err := ioutil.ReadFile(file)
 	if err != nil {
@@ -63,10 +63,11 @@ func launch(_ *cli.Context) error{
 	var structNames []string
 	for _, item := range s {
 		item = strings.Replace(item, "type ", "", -1)
-		item = strings.Replace(item, " struct", "\n", -1)
+		item = strings.Replace(item, " struct", "", -1)
 		structNames = append(structNames, item)
 		fOut.WriteString(item)
 		fmt.Print(item)
+		
 	}
 	return nil
 }
