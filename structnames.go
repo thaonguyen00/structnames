@@ -44,7 +44,7 @@ func main() {
 
 func launch(_ *cli.Context) error{
 	file, _ := filepath.Abs(flags.FileIn)
-	fmt.Println("worked:", file)
+	fmt.Println("Parsing file:", file)
 
 	b, err := ioutil.ReadFile(file)
 	if err != nil {
