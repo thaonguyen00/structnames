@@ -20,7 +20,7 @@ var flags struct {
 func main() {
 	app := cli.NewApp()
 	app.Name = "structnames"
-	app.Usage = "REST APIs for getting agent details"
+	app.Usage = "parse a file and cat all go struct names to an output file"
 	app.Flags = []cli.Flag{
 		cli.StringFlag{
 			Name:        "input",
