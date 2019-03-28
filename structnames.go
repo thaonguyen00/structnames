@@ -10,7 +10,7 @@ import (
 	"regexp"
 	"strings"
 	"fmt"
-	"os/exec"
+	
 )
 var flags struct {
 	FileIn     string
